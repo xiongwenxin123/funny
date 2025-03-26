@@ -1,9 +1,13 @@
 <template>
   <div class="container" data-tauri-drag-region>
-    <h1>牛马时钟</h1>
-    <div class="time">{{ time }}</div>
-    <div class="date">{{ date }}</div>
-    <div class="animal">{{ animal }}</div>
+    <div class="titlebar">
+      <div class="titlebar-text">牛马时钟</div>
+    </div>
+    <div class="content">
+      <div class="time">{{ time }}</div>
+      <div class="date">{{ date }}</div>
+      <div class="animal">{{ animal }}</div>
+    </div>
   </div>
 </template>
 
@@ -45,12 +49,31 @@ onMounted(() => {
 .container {
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
-  margin: 0 auto;
-  cursor: move;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.titlebar {
+  height: 30px;
+  background: #2c3e50;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.titlebar-text {
+  margin-left: 8px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
 }
 
 h1 {
